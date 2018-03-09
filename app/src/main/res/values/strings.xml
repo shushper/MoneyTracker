@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">MoneyTrackerMarch18</string>
 
-
-
-
+    <string name="add_item_title">Новая запись</string>
 </resources>
