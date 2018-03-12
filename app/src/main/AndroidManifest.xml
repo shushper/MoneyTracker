@@ -18,6 +18,13 @@
         </activity>
 
         <activity android:name=".AddItemActivity" android:label="@string/add_item_title">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".ItemListActivity"
+                android:title="@string/activity_items_list_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
