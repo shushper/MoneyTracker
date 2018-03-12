@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorItem"
             android:layout_weight="1"
-            android:padding="@dimen/basepadding"
+            android:padding="@dimen/base_padding"
             android:textColor="@color/white"
             tools:text="Молокоkjdfbnndfkjbfkjb dkjbkd fkjd fbjkdf bjdf bj dfbdkj"/>
 
@@ -25,7 +25,7 @@
             android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:padding="@dimen/basepadding"
+            android:padding="@dimen/base_padding"
             android:gravity="center"
             android:textColor="@color/white"
             android:background="@color/colorItemDark"
