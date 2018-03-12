@@ -2,6 +2,5 @@
     <string name="app_name">MoneyTrackerMarch18</string>
 
     <string name="add_item_title">Новая запись</string>
-    <string name="currency_rur">₽</string>
     <string name="activity_items_list_title">Учёт бюджета</string>
 </resources>

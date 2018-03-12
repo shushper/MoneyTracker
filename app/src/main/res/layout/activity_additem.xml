@@ -3,52 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/bg_pattern"
+    android:orientation="vertical"
     tools:context="com.loftschool.moneytrackermarch18.AddItemActivity">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:paddingLeft="22dp"
-        android:paddingRight="22dp"
+        android:layout_height="68dp"
+        android:background="@color/white"
         android:gravity="center_vertical"
-        android:layout_height="68dp">
+        android:orientation="horizontal"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp">
 
         <EditText
             android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:background="@null"
             android:hint="Название"
-            android:maxLines="1"
             android:inputType="text"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:maxLines="1" />
 
         <EditText
             android:id="@+id/price"
-            android:layout_marginLeft="8dp"
-            android:background="@null"
-            android:hint="0₽"
-            android:gravity="right"
-            android:maxLines="1"
-            android:inputType="number"
-            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="right"
+            android:hint="0₽"
+            android:inputType="number"
+            android:maxLines="1" />
+
         <Button
-            android:enabled="false"
             android:id="@+id/add_btn"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
             android:layout_marginLeft="22dp"
             android:background="@drawable/ic_add"
-            android:layout_width="26dp"
-            android:layout_height="26dp" />
+            android:enabled="false" />
 
 
     </LinearLayout>
-
 
 
 </LinearLayout>
