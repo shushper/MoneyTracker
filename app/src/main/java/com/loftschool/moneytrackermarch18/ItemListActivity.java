@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.SpannableString;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,29 +53,6 @@ public class ItemListActivity extends AppCompatActivity {
         mData.add(new Record("Молоко", 35));
         mData.add(new Record("Жизнь", 1));
         mData.add(new Record("Курсы", 50));
-        mData.add(new Record("Хлеб", 26));
-        mData.add(new Record("Тот самый ужин который я оплатил за всех потому что платил картой", 600000));
-        mData.add(new Record("", 0));
-        mData.add(new Record("Тот самый ужин", 604));
-        mData.add(new Record("ракета Falcon Heavy", 1));
-        mData.add(new Record("Лего Тысячелетний сокол", 100000000));
-        mData.add(new Record("Монитор", 100));
-        mData.add(new Record("MacBook Pro", 100));
-        mData.add(new Record("Шоколадка", 100));
-        mData.add(new Record("Шкаф", 100));
-        mData.add(new Record("Молоко", 35));
-        mData.add(new Record("Жизнь", 1));
-        mData.add(new Record("Курсы", 50));
-        mData.add(new Record("Хлеб", 26));
-        mData.add(new Record("Тот самый ужин который я оплатил за всех потому что платил картой", 600000));
-        mData.add(new Record("", 0));
-        mData.add(new Record("Тот самый ужин", 604));
-        mData.add(new Record("ракета Falcon Heavy", 1));
-        mData.add(new Record("Лего Тысячелетний сокол", 100000000));
-        mData.add(new Record("Монитор", 100));
-        mData.add(new Record("MacBook Pro", 100));
-        mData.add(new Record("Шоколадка", 100));
-        mData.add(new Record("Шкаф", 100));
     }
 
     private class ItemListAdapter extends RecyclerView.Adapter<RecordViewHolder> {
@@ -114,12 +90,9 @@ public class ItemListActivity extends AppCompatActivity {
         }
 
         public void applyData(Record record) {
-            Log.d(TAG, "applyData "
-                    + mRecycleView.getChildLayoutPosition(itemView) + " " + record.getTitle());
+            Log.d(TAG, "applyData " + mRecycleView.getChildLayoutPosition(itemView) + " " + record.getTitle());
             title.setText(record.getTitle());
             price.setText(String.valueOf(record.getPrice()));
-            SpannableString spannableString = new SpannableString(String.valueOf(record.getPrice()));
-            // use it carefully
         }
     }
 }
