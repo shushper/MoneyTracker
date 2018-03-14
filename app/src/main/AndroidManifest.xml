@@ -23,7 +23,7 @@
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
-        <activity android:name=".ItemListActivity"
+        <activity android:name=".ItemsActivity"
                 android:title="@string/activity_items_list_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
