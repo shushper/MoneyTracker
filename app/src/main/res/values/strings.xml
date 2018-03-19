@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">MoneyTrackerMarch18</string>
 
-    <string name="add_item_title">Новая запись</string>
-    <string name="activity_items_list_title">Учёт бюджета</string>
+    <string name="add_item_screen_title">Новая запись</string>
+    <string name="main_screen_title">Учёт бюджета</string>
+
 
 
     <string name="tab_incomes">Доходы</string>

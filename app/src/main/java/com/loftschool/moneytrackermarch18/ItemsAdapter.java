@@ -19,6 +19,10 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
         notifyDataSetChanged();
     }
 
+    public void addItem(Item item) {
+        data.add(0, item);
+        notifyItemInserted(0);
+    }
 
     @Override
     public ItemsAdapter.ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -71,7 +75,7 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
         public void applyData(Item item) {
             title.setText(item.name);
-            price.setText(String.valueOf(item.price));
+            price.setText(item.price);
         }
     }
 }
