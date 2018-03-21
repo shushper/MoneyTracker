@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.loftschool.moneytrackermarch18.MainActivity">
 
     <android.support.design.widget.AppBarLayout
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            android:background="@color/colorPrimary" />
+            android:background="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|snap" />
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            android:background="@color/colorPrimary" />
+            android:background="@color/colorPrimary"
+            app:tabIndicatorColor="@color/tab_indicator_color"
+            app:tabSelectedTextColor="@color/tab_text_color_active"
+            app:tabTextColor="@color/tab_text_color_default" />
 
     </android.support.design.widget.AppBarLayout>
 
 
     <android.support.v4.view.ViewPager
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

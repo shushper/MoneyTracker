@@ -18,4 +18,8 @@
     <color name="colorIndicator">#ffff8d</color>
     <color name="list_item_text">#ffffff</color>
     <color name="white">#fff</color>
+
+    <color name="tab_indicator_color">#ffff8d</color>
+    <color name="tab_text_color_active">#ffffff</color>
+    <color name="tab_text_color_default">#ddede8</color>
 </resources>

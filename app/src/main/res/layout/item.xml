@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="5dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
     android:layout_marginTop="5dp"
+    android:minHeight="65dp"
+    android:gravity="center_vertical"
     android:orientation="horizontal">
 
     <TextView
@@ -15,17 +17,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:padding="@dimen/base_padding"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textSize="20sp"
         android:textColor="@color/white"
         tools:text="Молокоkjdfbnndfkjbfkjb dkjbkd fkjd fbjkdf bjdf bj dfbdkj" />
 
     <TextView
         android:id="@+id/price"
+        android:textSize="24sp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:background="@color/colorShadow"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:padding="@dimen/base_padding"
         android:textColor="@color/white"
-        tools:text="3827387232345₽" />
+        tools:text="1000₽" />
 </LinearLayout>
