@@ -124,6 +124,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     public void onSupportActionModeStarted(@NonNull ActionMode mode) {
         super.onSupportActionModeStarted(mode);
         Log.i(TAG, "onSupportActionModeStarted: ");
+        fab.hide();
         actionMode = mode;
     }
 
@@ -131,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     public void onSupportActionModeFinished(@NonNull ActionMode mode) {
         super.onSupportActionModeFinished(mode);
         Log.i(TAG, "onSupportActionModeFinished: ");
+        fab.show();
         actionMode = null;
     }
 }
