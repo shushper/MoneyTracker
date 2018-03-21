@@ -25,7 +25,7 @@ public class ItemsFragment extends Fragment {
 
     private static final String TYPE_KEY = "type";
 
-    private static final int ADD_ITEM_REQUEST_CODE = 123;
+    public static final int ADD_ITEM_REQUEST_CODE = 123;
 
     public static ItemsFragment createItemsFragment(String type) {
         ItemsFragment fragment = new ItemsFragment();
@@ -81,23 +81,6 @@ public class ItemsFragment extends Fragment {
         recycler.setLayoutManager(new LinearLayoutManager(getContext()));
         recycler.setAdapter(adapter);
 
-        fab = view.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //неявный intent
-//                Intent intent = new Intent();
-//                intent.setAction(Intent.ACTION_VIEW);
-//                intent.setData(Uri.parse("https://pikabu.ru"));
-//                startActivity(intent);
-
-                //явный intent
-                Intent intent = new Intent(getContext(), AddItemActivity.class);
-                intent.putExtra(AddItemActivity.TYPE_KEY, type);
-                startActivityForResult(intent, ADD_ITEM_REQUEST_CODE);
-            }
-        });
 
         refresh = view.findViewById(R.id.refresh);
         refresh.setColorSchemeColors(Color.BLUE, Color.CYAN, Color.GREEN);
@@ -132,7 +115,10 @@ public class ItemsFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ADD_ITEM_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             Item item = data.getParcelableExtra("item");
-            adapter.addItem(item);
+            if (item.type.equals(type)) {
+                adapter.addItem(item);
+            }
+
         }
 
 
