@@ -19,6 +19,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.loftschool.moneytrackermarch18.api.AddItemResult;
+import com.loftschool.moneytrackermarch18.api.Api;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -55,6 +58,7 @@ public class ItemsFragment extends Fragment {
 
 
     private Api api;
+    private App app;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,7 +73,9 @@ public class ItemsFragment extends Fragment {
             throw new IllegalArgumentException("Unknown type");
         }
 
-        api = ((App) getActivity().getApplication()).getApi();
+        app = (App) getActivity().getApplication();
+
+        api = app.getApi();
 
     }
 
@@ -117,12 +123,32 @@ public class ItemsFragment extends Fragment {
         });
     }
 
+    private void addItem(final Item item) {
+        Call<AddItemResult> call = api.addItem(item.price, item.name, item.type);
+
+        call.enqueue(new Callback<AddItemResult>() {
+            @Override
+            public void onResponse(Call<AddItemResult> call, Response<AddItemResult> response) {
+                AddItemResult result = response.body();
+                if (result.status.equals("success")) {
+                    adapter.addItem(item);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<AddItemResult> call, Throwable t) {
+
+            }
+        });
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ADD_ITEM_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             Item item = data.getParcelableExtra("item");
             if (item.type.equals(type)) {
-                adapter.addItem(item);
+//                adapter.addItem(item);
+                addItem(item);
             }
 
         }
@@ -130,6 +156,8 @@ public class ItemsFragment extends Fragment {
 
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+
 
     /*     ACTION MODE   */
 
