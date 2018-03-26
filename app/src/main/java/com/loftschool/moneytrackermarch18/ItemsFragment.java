@@ -131,6 +131,7 @@ public class ItemsFragment extends Fragment {
             public void onResponse(Call<AddItemResult> call, Response<AddItemResult> response) {
                 AddItemResult result = response.body();
                 if (result.status.equals("success")) {
+                    item.id = result.id;
                     adapter.addItem(item);
                 }
             }
@@ -147,7 +148,6 @@ public class ItemsFragment extends Fragment {
         if (requestCode == ADD_ITEM_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             Item item = data.getParcelableExtra("item");
             if (item.type.equals(type)) {
-//                adapter.addItem(item);
                 addItem(item);
             }
 
@@ -166,6 +166,7 @@ public class ItemsFragment extends Fragment {
     private void removeSelectedItems() {
         for (int i = adapter.getSelectedItems().size() - 1; i >= 0; i--) {
             adapter.remove(adapter.getSelectedItems().get(i));
+
         }
 
         actionMode.finish();
