@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MoneyTrackerMarch18</string>
+    <string name="app_name">ReleaseAppName</string>
 
     <string name="add_item_screen_title">Новая запись</string>
     <string name="main_screen_title">Учёт бюджета</string>
