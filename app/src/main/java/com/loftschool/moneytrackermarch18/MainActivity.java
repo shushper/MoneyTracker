@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     private ActionMode actionMode = null;
 
+    private Boolean initialized = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     protected void onResume() {
         super.onResume();
 
+
         if (((App) getApplication()).isAuthorized()) {
             initTabs();
         } else {
@@ -74,8 +77,12 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
     private void initTabs() {
-        MainPagesAdapter adapter = new MainPagesAdapter(getSupportFragmentManager(), this);
-        viewPager.setAdapter(adapter);
+        if (!initialized) {
+            MainPagesAdapter adapter = new MainPagesAdapter(getSupportFragmentManager(), this);
+            viewPager.setAdapter(adapter);
+            initialized = true;
+        }
+
     }
 
     @Override
