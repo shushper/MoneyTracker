@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 
 import com.loftschool.moneytrackermarch18.api.AddItemResult;
 import com.loftschool.moneytrackermarch18.api.Api;
+import com.loftschool.moneytrackermarch18.api.Item;
 import com.loftschool.moneytrackermarch18.api.RemoveItemResult;
 
 import java.util.List;

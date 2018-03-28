@@ -8,21 +8,25 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        resConfigs "en", "ru"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", "\"http://android.loftschool.com/basic/v1/\""
+            resValue("string", "gradle_title", "MTRelease")
         }
 
         debug {
+            applicationIdSuffix ".debug"
             buildConfigField "String", "BASE_URL", "\"http://android.loftschool.com/basic/v1/\""
+            resValue("string", "gradle_title", "MTDebug")
         }
     }
-
 
 }
 

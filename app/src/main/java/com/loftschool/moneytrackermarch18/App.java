@@ -37,7 +37,7 @@ public class App extends Application {
         interceptor.setLevel(
                 BuildConfig.DEBUG
                         ? HttpLoggingInterceptor.Level.BODY
-                        : HttpLoggingInterceptor.Level.NONE
+                        : HttpLoggingInterceptor.Level.BODY
         );
 
 

@@ -1,7 +1,5 @@
 package com.loftschool.moneytrackermarch18.api;
 
-import com.loftschool.moneytrackermarch18.Item;
-
 import java.util.List;
 
 import retrofit2.Call;
@@ -20,7 +18,7 @@ public interface Api {
     @POST("items/add")
     Call<AddItemResult> addItem(@Query("price") String price, @Query("name") String name, @Query("type") String type);
 
-    @POST("remove")
+    @POST("items/remove")
     Call<RemoveItemResult> removeItem(@Query("id") int id);
 
     @GET("balance")

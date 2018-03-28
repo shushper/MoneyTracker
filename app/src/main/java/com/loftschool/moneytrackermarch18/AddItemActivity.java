@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.loftschool.moneytrackermarch18.api.Item;
+
 public class AddItemActivity extends AppCompatActivity {
 
     private static final String TAG = "AddItemActivity";

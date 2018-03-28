@@ -13,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
+import com.loftschool.moneytrackermarch18.api.Item;
+
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
     private static final String TAG = "MainActivity";
 
@@ -21,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private FloatingActionButton fab;
 
     private ActionMode actionMode = null;
+
+    private Boolean initialized = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(R.string.gradle_title);
 
         viewPager = findViewById(R.id.viewPager);
         tabLayout = findViewById(R.id.tabLayout);
@@ -65,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     protected void onResume() {
         super.onResume();
 
+
         if (((App) getApplication()).isAuthorized()) {
             initTabs();
         } else {
@@ -74,8 +80,12 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     }
 
     private void initTabs() {
-        MainPagesAdapter adapter = new MainPagesAdapter(getSupportFragmentManager(), this);
-        viewPager.setAdapter(adapter);
+        if (!initialized) {
+            MainPagesAdapter adapter = new MainPagesAdapter(getSupportFragmentManager(), this);
+            viewPager.setAdapter(adapter);
+            initialized = true;
+        }
+
     }
 
     @Override
