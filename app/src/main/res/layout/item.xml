@@ -23,7 +23,7 @@
         android:paddingRight="16dp"
         android:textSize="20sp"
         android:textColor="@color/white"
-        tools:text="Молокоkjdfbnndfkjbfkjb dkjbkd fkjd fbjkdf bjdf bj dfbdkj" />
+        tools:text="Молоко" />
 
     <TextView
         android:id="@+id/price"
@@ -35,5 +35,5 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textColor="@color/white"
-        tools:text="1000₽" />
+        tools:text="55₽" />
 </LinearLayout>

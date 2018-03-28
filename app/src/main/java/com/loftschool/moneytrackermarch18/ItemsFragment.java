@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 
 import com.loftschool.moneytrackermarch18.api.AddItemResult;
 import com.loftschool.moneytrackermarch18.api.Api;
+import com.loftschool.moneytrackermarch18.api.RemoveItemResult;
 
 import java.util.List;
 
@@ -165,7 +166,19 @@ public class ItemsFragment extends Fragment {
 
     private void removeSelectedItems() {
         for (int i = adapter.getSelectedItems().size() - 1; i >= 0; i--) {
-            adapter.remove(adapter.getSelectedItems().get(i));
+            Item item = adapter.remove(adapter.getSelectedItems().get(i));
+            Call<RemoveItemResult> call = api.removeItem(item.id);
+            call.enqueue(new Callback<RemoveItemResult>() {
+                @Override
+                public void onResponse(Call<RemoveItemResult> call, Response<RemoveItemResult> response) {
+
+                }
+
+                @Override
+                public void onFailure(Call<RemoveItemResult> call, Throwable t) {
+
+                }
+            });
 
         }
 
